@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MidSem</title>
+    <style>
+        #primary{
+            background-color: blue;
+            color: white;
+            border: 1px solid black;
+        }
+        #danger{
+            background-color: red;
+            color: white;
+            border: 1px solid black;
+        }
+        #firstBlock{
+            background-color: gray;
+            color: white;
+        }
+        #secondBlock{
+            background-color: green;
+            color: white;
+        }
+        #bottom2{
+            align-items: center;
+            margin-left: 100px;
+            margin-top: 1px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        #bottom3{
+            align-items: center;
+            margin-left: 100px;
+            margin-top: 1px;
+            border-radius: 45%;
+            border: 1px solid black;
+        }
+        #bottom{
+            align-items: center;
+            margin-left: 100px;
+            margin-top: 1px;
+        }
+        #title{
+            height: 100px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <h1>SAU</h1>
+        <p><b>Mid Sem Exam March 2025</b></p>
+    </div>
+    <h2 id="heading1">Section Item 1</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, itaque omnis numquam repellat hic harum quibusdam earum voluptate consequuntur modi eum? Blanditiis sit consequatur consectetur culpa et ipsa earum minima!</p>
+    <h4 id="heading2">Background</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quasi dolor perspiciatis quibusdam, quaerat culpa aliquam blanditiis, vero soluta minima maiores tenetur sed sit. Repellat, ut dolorem? Hic, voluptas amet.</p>
+    <br>
+    <button id="primary">.bg.primary</button>
+    <br>
+    <div id="firstBlock">.bg.secondary</div>
+    <br>
+    <div id="secondBlock">.bg.sucess</div>
+    <br>
+    <button id="danger">.bg.danger</button>
+    <br>
+    <h4 id="heading2">Tables</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quas dicta optio omnis, quidem aut tenetur est placeat ratione quibusdam, modi accusamus veritatis debitis harum? Magni modi itaque at suscipit!</p>
+    <table border="1" style="border-collapse:collapse ; width:100%;">
+        <tr>
+            <th>#</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Handle</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>madhav</td>
+            <td>rana</td>
+            <td>@madhavranaaa</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>mark</td>
+            <td>cuban</td>
+            <td>@mark_cuban</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>virat</td>
+            <td>kohli</td>
+            <td>@virat.kohli18</td>
+        </tr>
+    </table>
+    <h4 id="heading2">Images</h4>
+    <img src="image.jpg" height="200px" width="2000px"/>
+    <br>
+    <img id="bottom" src="image.jpg" width="200px"/>
+    <img id="bottom" src="image.jpg" width="200px"/>
+    <img id="bottom2" src="image.jpg" width="200px"/>
+    <img id="bottom3" src="image.jpg" width="200px"/>
+    <br>
+    <section id="sec">
+        <h3>Multiplication Table Generator</h3>
+        <input type="number" id="num1" placeholder="Enter a number">
+        <button onclick="generateTable()">Generate Table</button>
+        <div id="output1"></div>
+    </section>
+    <section id="sec">
+        <h3>Hands-on Activity: JavaScript Control Flow & Loops</h3>
+        <label for="number">Enter a number:</label>
+        <input type="number" id="number" placeholder="Enter a number">
+        <button onclick="checkEvenOdd()">Check Even or Odd</button>
+        <button onclick="printNumbers()">Print 1 to 10</button>
+        <button onclick="countDown()">Count Down 5 to 1</button>
+        <div id="output"></div>
+    </section>  
+
+    <h2><b>Section Item End</b></h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt iure error magnam porro harum, cumque perspiciatis id itaque natus dignissimos provident libero sed, incidunt eius. Facere asperiores praesentium vero corrupti.</p>
+    <script>
+        // alert for buttons
+        let button1=document.getElementById("primary");
+        button1.addEventListener("click",function(){
+            alert("clicked");
+        })
+        let button2=document.getElementById("danger");
+        button2.addEventListener("click",function(){
+            alert("clicked");
+        })
+        // checking even odd
+        function checkEvenOdd() {
+            let num = document.getElementById("number").value;
+            if (num % 2 === 0) {
+                document.getElementById("output").innerHTML = `${num} is Even.`;
+            } else {
+                document.getElementById("output").innerHTML = `${num} is Odd.`;
+            }
+        }
+        // print 1->10
+        function printNumbers() {
+            let output = "Numbers: ";
+            for (let i = 1; i <= 10; i++) {
+                output += i + " ";
+            }
+            document.getElementById("output").innerHTML = output;
+        }
+        //count down
+        function countDown() {
+            let i = 5;
+            let output = "Countdown: ";
+            while (i >= 1) {
+                output += i + " ";
+                i--;
+            }
+            document.getElementById("output").innerHTML = output;
+        }
+        // multiplication
+        function generateTable() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let output = `<strong>Multiplication Table for ${num1}:</strong><br>`;
+            for (let i = 1; i <= 10; i++) {
+                output += `${num1} * ${i} = ${num1 * i}<br>`;
+            }
+            document.getElementById("output1").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
